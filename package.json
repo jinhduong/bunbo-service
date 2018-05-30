@@ -1,0 +1,27 @@
+{
+  "name": "bunbo-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinhduong/bunbo-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jinhduong/bunbo-service/issues"
+  },
+  "homepage": "https://github.com/jinhduong/bunbo-service#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.87.0",
+    "uid": "0.0.2",
+    "webtask-tools": "^3.2.1"
+  }
+}
