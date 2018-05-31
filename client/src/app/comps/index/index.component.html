@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="introduce-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h3 class="display-4">Is it always live?</h3>
+    <p class="lead">Engage with your site and stay active</p>
+    <p class="lead">Check every 5 minutes</p>
+    <p class="lead">Automatically sends mail when it dies</p>
+    <p class="lead">Support chart for stats</p>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+      <div class="form-group--search form-group--search--left">
+        <input [(ngModel)]="site" (keyup.enter)="add()" class="form-control form-control-lg form-control--rounded" type="search"
+          placeholder="Put your site name here...">
+      </div>
+    </div>
+    <div *ngIf="result" class="alert alert-success" role="alert">
+        ✅ The site {{result.site}} alread added!!!
+      <a href="/stats/{{result.key}}">🚬 Click here to see statistics </a>
+    </div>
+  </div>
+</div>
