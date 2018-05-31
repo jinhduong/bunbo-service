@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SiteService } from './services/site.service';
 import { StatsComponent } from './comps/stats/stats.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StatsComponent } from './comps/stats/stats.component';
     HttpClientModule
   ],
   providers: [
-    SiteService
+    SiteService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

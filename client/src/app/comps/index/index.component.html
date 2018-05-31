@@ -14,8 +14,8 @@
       </div>
     </div>
     <div *ngIf="result" class="alert alert-success" role="alert">
-        ✅ The site {{result.site}} alread added!!!
-      <a href="/stats/{{result.key}}">🚬 Click here to see statistics </a>
+      ✅ The site {{result.site}} alread added!!!
+      <a [routerLink]="['stats',result.key]">🚬 Click here to see statistics </a>
     </div>
   </div>
 </div>
