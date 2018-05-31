@@ -9,6 +9,7 @@ import { SiteService } from '../../services/site.service';
 export class IndexComponent implements OnInit {
 
   site;
+  email;
   result: { key, site };
 
   constructor(
@@ -19,7 +20,7 @@ export class IndexComponent implements OnInit {
   }
 
   add() {
-    this._siteService.add(this.site).subscribe(x => {
+    this._siteService.add(this.site, this.email).subscribe(x => {
       this.result = x as any;
     })
   }

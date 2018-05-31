@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/add', (req, res) => {
     const site = req.query.site;
+    const email = req.query.email;
     if (!isUrl(site)) res.sendStatus(400).json('site not correct');
 
     // Add site
@@ -26,13 +27,18 @@ app.get('/add', (req, res) => {
 
     // Send email
     const url = 'https://uptime.bunbo.ga/#/stats';
-    sgMail.setApiKey(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);
+    sgMail.setApiKey('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');
     const msg = {
-        to: 'dinh.duong@rentguard.com.my',
-        from: '0961020@gmail.com',
-        subject: 'Sending with SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: `<strong>Here is your site tracing: <a href="${url/key}">${url/key}</a></strong>`,
+        to: email,
+        from: 'uptime@bunbo.ga',
+        subject: '[bunbo uptimerobot] Your email alread added',
+        html: `
+        Hi guy, <br>
+        Thanks for using our product.<br>
+        Here is your site stats: <a href="${url}/${key}">${url}/${key}</a><br>
+        Thanks,<br>
+        Bunbo-uptime
+        `,
     };
     sgMail.send(msg);
 

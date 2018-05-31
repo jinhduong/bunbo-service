@@ -9,8 +9,8 @@ export class SiteService {
 
     }
 
-    add(site) {
-        return this.http.get(`${this.base}/add?site=${site}`);
+    add(site, email) {
+        return this.http.get(`${this.base}/add?site=${site}&email=${email}`);
     }
 
     list() {
