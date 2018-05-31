@@ -3,6 +3,7 @@ const Webtask = require('webtask-tools');
 const bodyParser = require('body-parser');
 const uid = require('uid');
 const app = express();
+const sgMail = require('@sendgrid/mail');
 
 app.use(bodyParser.json());
 
@@ -22,6 +23,18 @@ app.get('/add', (req, res) => {
             logs: []
         }
     });
+
+    // Send email
+    const url = 'https://uptime.bunbo.ga/#/stats';
+    sgMail.setApiKey(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);
+    const msg = {
+        to: 'dinh.duong@rentguard.com.my',
+        from: '0961020@gmail.com',
+        subject: 'Sending with SendGrid is Fun',
+        text: 'and easy to do anywhere, even with Node.js',
+        html: `<strong>Here is your site tracing: <a href="${url/key}">${url/key}</a></strong>`,
+    };
+    sgMail.send(msg);
 
     // Result
     res.json({
