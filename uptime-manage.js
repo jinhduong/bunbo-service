@@ -33,9 +33,10 @@ app.get('/add', (req, res) => {
         from: 'uptime@bunbo.ga',
         subject: '[bunbo uptimerobot] Your email alread added',
         html: `
-        Hi guy, <br>
-        Thanks for using our product.<br>
+        Dear, <br>
+        
         Here is your site stats: <a href="${url}/${key}">${url}/${key}</a><br>
+
         Thanks,<br>
         Bunbo-uptime
         `,

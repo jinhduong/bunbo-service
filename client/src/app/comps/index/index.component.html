@@ -9,9 +9,9 @@
   <div class="col-md-12">
     <div class="form-group">
       <div class="form-group--search form-group--search--left">
-        <input [(ngModel)]="email" class="form-control form-control-lg form-control--rounded" placeholder="Put your email here...">
+        <input [(ngModel)]="email" name="email" class="form-control form-control-lg form-control--rounded" placeholder="Put your email here...">
         <br>
-        <input [(ngModel)]="site" (keyup.enter)="add()" class="form-control form-control-lg form-control--rounded" type="search"
+        <input [(ngModel)]="site" name="site" (keyup.enter)="add()" class="form-control form-control-lg form-control--rounded" type="search"
           placeholder="And then put your site name here and press enter...">
       </div>
     </div>
