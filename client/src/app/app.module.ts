@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SiteService } from './services/site.service';
 import { StatsComponent } from './comps/stats/stats.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     SiteService,
