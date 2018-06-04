@@ -27,7 +27,7 @@ app.get('/add', (req, res) => {
 
     // Send email
     const url = 'https://uptime.bunbo.ga/#/stats';
-    sgMail.setApiKey('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');
+    sgMail.setApiKey(context.secrets.sendgrid_key);
     const msg = {
         to: email,
         from: 'uptime@bunbo.ga',
